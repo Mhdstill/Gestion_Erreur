@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet"  href="{{ asset('css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <div style="padding-top:30px;padding-bottom:30px;margin-top:100px; border-radius: 5px;box-shadow: rgba(17, 17, 17, 0.1) 0px 0px 2px 1px;background-color:rgb(255, 255, 255);">
+           <div id="play">
+            <h1 style="font-family: 'Source Sans Pro', sans-serif;;font-size: 34px;color: #333333;line-height: 1.2;text-align: center;font-weight:bold;">
+            Bievenue sur le lotus de la nuit de l'info</h1>
+            <p style="text-align:center; font-size:30px;font-family: 'Open Sans', sans-serif; ">
+                Utiliser les lettres données ci-dessous pour essayer de trouver le mot. <br/>
+                Vous n'avez seulement que 4 chances, faites attention !
+            </p>
+            <br/>
+
+            <form>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-2">
+                            <span class="glyphicon glyphicon glyphicon-heart" aria-hidden="true" style="font-size:30px;color:red" id="heart1"></span>
+                        </div>
+
+                        <div class="col-md-2">
+                            <span class="glyphicon glyphicon glyphicon-heart" aria-hidden="true" style="font-size:30px;color:red" id="heart2"></span>
+                        </div>
+
+                        <div class="col-md-2">
+                            <span class="glyphicon glyphicon glyphicon-heart" aria-hidden="true" style="font-size:30px;color:red" id="heart3"></span>
+                        </div>
+
+                        <div class="col-md-2">
+                            <span class="glyphicon glyphicon glyphicon-heart" aria-hidden="true" style="font-size:30px;color:red" id="heart4"></span>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1"  class="input-response" id="response0" disabled>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-response" id="response1" disabled>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-response" id="response2" disabled>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-response" id="response3" disabled>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-response" id="response4" disabled>
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-response" id="response5" disabled>
+                        </div>
+                    </div>
+                    <br/>
+
+                            <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1"  class="input-number" id="number0">
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-number" id="number1">
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-number" id="number2">
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-number" id="number3">
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-number" id="number4">
+                        </div>
+
+                        <div class="col-md-2">
+                            <input type="text" size="1" maxlength="1" class="input-number" id="number5">
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+
+            <br/><br/>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5">
+                    <input type="submit" id="submit-form" class="form-control submit-btn">
+                </div>
+            </div>
+            </form>
+
+            <input type="text" style="display:none" id="getHearth" value="4">
+            <br/>
+            <br/>
+
+           </div>
+
+            <div id="loose" style="padding:50px">
+                <video controls style="width:100%; height:auto" id="loosevideo" >
+                    <source src="{{ asset('img/perdu.mp4') }}" type="video/mp4">
+                </video>
+
+                <br/><br/>
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-5">
+                        <button class="form-control submit-btn replay" style="cursor:pointer">Rejouer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="win" style="padding:50px">
+                <video controls style="width:100%; height:auto" id="winvideo" >
+                    <source src="{{ asset('img/gagné.mp4') }}" type="video/mp4">
+                </video>
+
+                <br/><br/>
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-5">
+                        <button class="form-control submit-btn replay" style="cursor:pointer">Rejouer</button>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/index.js') }}"></script>
+{% endblock %}
